@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="600.0" prefWidth="400.0" style="-fx-background-color: f1f1f1;" stylesheets="@StylesheetPT.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.momuney2.controllers.PastTransactionsController">
+   <children>
+      <VBox layoutX="25.0" layoutY="25.0" maxHeight="72.0" maxWidth="350.0" minHeight="72.0" minWidth="350.0" prefHeight="72.0" prefWidth="350.0">
+         <children>
+            <HBox prefHeight="30.0" prefWidth="350.0">
+               <children>
+                  <TextField fx:id="searchName" prefHeight="30.0" prefWidth="185.0" promptText="Name" style="-fx-background-color: #e0e0e0; -fx-border-radius: 5;">
+                     <HBox.margin>
+                        <Insets right="5.0" />
+                     </HBox.margin>
+                  </TextField>
+                  <DatePicker fx:id="searchDate" prefHeight="30.0" prefWidth="160.0" promptText="Date" style="-fx-border-radius: 5; -fx-background-radius: 5;" />
+               </children>
+               <VBox.margin>
+                  <Insets bottom="5.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox prefHeight="30.0" prefWidth="350.0">
+               <children>
+                  <ChoiceBox fx:id="searchCategory" prefHeight="30.0" prefWidth="185.0">
+                     <HBox.margin>
+                        <Insets right="5.0" />
+                     </HBox.margin>
+                  </ChoiceBox>
+                  <ChoiceBox fx:id="sortBy" prefHeight="30.0" prefWidth="160.0" />
+               </children>
+               <VBox.margin>
+                  <Insets bottom="5.0" />
+               </VBox.margin></HBox>
+            <Line endX="348.0" stroke="#e0e0e0" strokeWidth="2.0" />
+         </children>
+      </VBox>
+      <HBox alignment="TOP_CENTER" layoutY="550.0" prefHeight="50.0" prefWidth="401.0" style="-fx-background-color: #063143;">
+         <children>
+            <StackPane>
+               <children>
+                  <Rectangle arcHeight="30.0" arcWidth="30.0" fill="#174c61" height="40.0" stroke="#ffffff00" strokeType="INSIDE" width="144.0">
+                     <StackPane.margin>
+                        <Insets />
+                     </StackPane.margin></Rectangle>
+                  <Button fx:id="pastTransactionsButton" mnemonicParsing="false" prefHeight="50.0" prefWidth="160.0" style="-fx-background-color: TRANSPARENT;" text="Transactions" textFill="WHITE">
+                     <font>
+                        <Font name="Damascus Regular" size="15.0" />
+                     </font>
+                  </Button>
+               </children>
+               <padding>
+                  <Insets bottom="5.0" top="5.0" />
+               </padding>
+            </StackPane>
+            <Button alignment="CENTER" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="80.0" style="-fx-background-color: TRANSPARENT;" text="+" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Damascus Regular" size="20.0" />
+               </font>
+            </Button>
+            <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="160.0" style="-fx-background-color: TRANSPARENT;" text="Summary" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Damascus Regular" size="15.0" />
+               </font>
+            </Button>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>
