@@ -3,14 +3,14 @@
 
 }
 
-.date-picker > .text-field {
+.date-picker .text-field {
     -fx-background-color: transparent;
     -fx-border-color: transparent;
     -fx-background-radius: 5 0 0 5;
     -fx-border-radius: 5 0 0 5;
 }
 
-.date-picker > .arrow-button {
+.date-picker .arrow-button {
     -fx-background-color: transparent;
     -fx-border-color: transparent;
     -fx-background-color: #e0e0e0;
@@ -22,5 +22,10 @@
     -fx-background-color: #e0e0e0;
     -fx-border-color: transparent;
     -fx-background-radius: 5;
+    -fx-border-radius: 5;
+}
+
+.choice-box .list-view {
+    -fx-border-color: transparent;
     -fx-border-radius: 5;
 }
