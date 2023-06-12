@@ -1,31 +1,109 @@
-.date-picker {
-    -fx-background-color: #e0e0e0;
 
+* {
+    primary-color: #063143;
+    secondary-color: #0c6183;
+    gray-color: #e0e0e0;
+    lightgray-color: #f1f1f1;
+}
+
+.button {
+    -fx-background-color: transparent;
+}
+
+.text-field {
+    -fx-background-color: gray-color;
+    -fx-background-radius: 5;
+    -fx-border-color: transparent;
+    -fx-border-radius: 5;
+    -fx-accent: secondary-color;
+}
+
+.date-picker {
+    -fx-background-color: gray-color;
+    -fx-background-radius: 5;
+    -fx-border-color: transparent;
+    -fx-border-radius: 5;
 }
 
 .date-picker .text-field {
     -fx-background-color: transparent;
-    -fx-border-color: transparent;
-    -fx-background-radius: 5 0 0 5;
-    -fx-border-radius: 5 0 0 5;
 }
 
 .date-picker .arrow-button {
     -fx-background-color: transparent;
+}
+
+.date-picker-popup {
+    -fx-background-color: lightgray-color;
+    -fx-background-radius: 5;
     -fx-border-color: transparent;
-    -fx-background-color: #e0e0e0;
-    -fx-background-radius: 0 5 5 0;
-    -fx-border-radius: 0 5 5 0;
+    -fx-border-radius: 5;
+}
+
+.date-picker-popup .cell:hover {
+    -fx-background-color: secondary-color;
+}
+
+.date-picker-popup .selected {
+    -fx-background-color: secondary-color;
+}
+
+.date-picker-popup .month-year-pane {
+    -fx-background-color: lightgray-color;
 }
 
 .choice-box {
-    -fx-background-color: #e0e0e0;
-    -fx-border-color: transparent;
+    -fx-background-color: gray-color;
     -fx-background-radius: 5;
+    -fx-border-color: transparent;
     -fx-border-radius: 5;
 }
 
-.choice-box .list-view {
+.choice-box .context-menu {
+    -fx-background-color: lightgray-color;
+    -fx-background-radius: 5;
     -fx-border-color: transparent;
     -fx-border-radius: 5;
+}
+
+.choice-box .menu-item:focused {
+    -fx-background-color: secondary-color;
+    -fx-background-radius: 5;
+}
+
+.scroll-pane {
+    -fx-background-color: gray-color;
+    -fx-background-radius: 5;
+    -fx-border-color: transparent;
+    -fx-border-radius: 5;
+}
+
+.scroll-pane .viewport {
+    -fx-background-color: lightgray-color;
+    -fx-background-radius: 5;
+}
+
+.scroll-pane .scroll-bar {
+    -fx-background-color: transparent;
+}
+
+.scroll-pane .scroll-bar .thumb {
+    -fx-background-color: lightgray-color;
+}
+
+.scroll-pane .increment-button,
+.scroll-pane .decrement-button {
+    -fx-background-color: transparent;
+}
+
+.scroll-pane .corner {
+    -fx-background-color: transparent;
+}
+
+#rootPane {
+    -fx-background-color: lightgray-color;
+}
+
+#navBar {
+    -fx-background-color: primary-color;
 }
