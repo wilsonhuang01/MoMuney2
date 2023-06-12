@@ -42,43 +42,44 @@
                   <Insets left="20.0" />
                </padding>
                <HBox.margin>
-                  <Insets right="130.0" />
+                  <Insets right="235.0" />
                </HBox.margin>
                <font>
                   <Font name="Caveat" size="28.0" />
                </font>
             </Label>
-            <Button alignment="CENTER" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="120.0" text="New" textAlignment="CENTER" textFill="WHITE">
+            <Button fx:id="newTransactionButton" alignment="CENTER" mnemonicParsing="false" prefHeight="40.0" prefWidth="55.0" text="New" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font name="Damascus Regular" size="15.0" />
                </font>
                <HBox.margin>
-                  <Insets right="5.0" />
+                  <Insets bottom="7.0" right="5.0" top="7.0" />
                </HBox.margin>
-            </Button>
-            <StackPane prefWidth="120.0">
-               <children>
-                  <Rectangle arcHeight="30.0" arcWidth="30.0" fill="#0c6183" height="40.0" stroke="#ffffff00" strokeType="INSIDE" width="120.0">
-                     <StackPane.margin>
-                        <Insets />
-                     </StackPane.margin></Rectangle>
-                  <Button fx:id="pastTransactionsButton" mnemonicParsing="false" prefHeight="50.0" prefWidth="120.0" text="Transactions" textFill="WHITE">
-                     <font>
-                        <Font name="Damascus Regular" size="15.0" />
-                     </font>
-                  </Button>
-               </children>
                <padding>
-                  <Insets bottom="5.0" top="5.0" />
+                  <Insets top="3.0" />
                </padding>
-               <HBox.margin>
-                  <Insets right="5.0" />
-               </HBox.margin>
-            </StackPane>
-            <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="120.0" text="Summary" textAlignment="CENTER" textFill="WHITE">
+            </Button>
+            <Button fx:id="transactionsButton" mnemonicParsing="false" prefHeight="50.0" prefWidth="110.0" text="Transactions" textFill="WHITE">
                <font>
                   <Font name="Damascus Regular" size="15.0" />
                </font>
+               <HBox.margin>
+                  <Insets bottom="7.0" right="5.0" top="7.0" />
+               </HBox.margin>
+               <padding>
+                  <Insets top="3.0" />
+               </padding>
+            </Button>
+            <Button fx:id="summaryButton" mnemonicParsing="false" prefHeight="50.0" prefWidth="85.0" text="Summary" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Damascus Regular" size="15.0" />
+               </font>
+               <HBox.margin>
+                  <Insets bottom="7.0" top="7.0" />
+               </HBox.margin>
+               <padding>
+                  <Insets top="3.0" />
+               </padding>
             </Button>
          </children>
       </HBox>

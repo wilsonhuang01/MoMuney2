@@ -18,11 +18,19 @@
     -fx-accent: secondary-color;
 }
 
+.text-field:hover {
+    -fx-background-color: whitesmoke;
+}
+
 .date-picker {
     -fx-background-color: gray-color;
     -fx-background-radius: 5;
     -fx-border-color: transparent;
     -fx-border-radius: 5;
+}
+
+.date-picker:hover {
+    -fx-background-color: whitesmoke;
 }
 
 .date-picker .text-field {
@@ -59,6 +67,10 @@
     -fx-border-radius: 5;
 }
 
+.choice-box:hover {
+    -fx-background-color: whitesmoke;
+}
+
 .choice-box .context-menu {
     -fx-background-color: lightgray-color;
     -fx-background-radius: 5;
@@ -89,11 +101,22 @@
 
 .scroll-pane .scroll-bar .thumb {
     -fx-background-color: lightgray-color;
+    -fx-background-radius: 5;
+}
+
+.scroll-pane .scroll-bar .thumb:hover {
+    -fx-background-color: whitesmoke;
 }
 
 .scroll-pane .increment-button,
 .scroll-pane .decrement-button {
     -fx-background-color: transparent;
+    -fx-background-radius: 2;
+}
+
+.scroll-pane .increment-button:hover,
+.scroll-pane .decrement-button:hover {
+    -fx-background-color: whitesmoke;
 }
 
 .scroll-pane .corner {
@@ -106,4 +129,17 @@
 
 #navBar {
     -fx-background-color: primary-color;
+}
+
+#transactionsButton {
+    -fx-background-color: secondary-color;
+    -fx-background-radius: 10;
+}
+
+#newTransactionButton, #summaryButton {
+    -fx-background-radius: 10;
+}
+
+#newTransactionButton:hover, #summaryButton:hover {
+    -fx-background-color: #0d618299;
 }

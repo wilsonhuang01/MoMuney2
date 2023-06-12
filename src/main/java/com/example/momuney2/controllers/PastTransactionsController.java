@@ -16,7 +16,6 @@ public class PastTransactionsController {
     @FXML DatePicker        searchDate;
     @FXML ChoiceBox<String> searchCategory;
     @FXML ChoiceBox<String> sortBy;
-    @FXML Button            pastTransactionsButton;
 
     @FXML
     private void initialize() {
