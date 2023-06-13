@@ -8,7 +8,7 @@
 
 <AnchorPane fx:id="rootPane" prefHeight="600.0" prefWidth="700.0" stylesheets="@StylesheetPT.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.momuney2.controllers.PastTransactionsController">
    <children>
-      <VBox layoutX="25.0" layoutY="75.0" prefHeight="72.0" prefWidth="650.0">
+      <VBox layoutX="25.0" layoutY="75.0" prefHeight="36.0" prefWidth="650.0">
          <children>
             <HBox prefHeight="30.0" prefWidth="650.0">
                <children>
@@ -16,6 +16,9 @@
                      <HBox.margin>
                         <Insets right="5.0" />
                      </HBox.margin>
+                     <font>
+                        <Font name="Damascus Regular" size="13.0" />
+                     </font>
                   </TextField>
                   <DatePicker fx:id="searchDate" prefHeight="30.0" prefWidth="145.0" promptText="Date">
                      <HBox.margin>
@@ -32,7 +35,10 @@
                   <Insets bottom="5.0" />
                </VBox.margin>
             </HBox>
-            <Line endX="648.0" stroke="#e0e0e0" strokeWidth="2.0" />
+            <Line endX="648.0" stroke="#e0e0e0" strokeWidth="2.0">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin></Line>
          </children>
       </VBox>
       <HBox fx:id="navBar" prefHeight="50.0" prefWidth="700.0">
@@ -85,7 +91,10 @@
       </HBox>
       <ScrollPane layoutX="25.0" layoutY="117.0" prefHeight="460.0" prefWidth="650.0">
         <content>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="460.0" prefWidth="650.0" />
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="460.0" prefWidth="650.0">
+               <children>
+                  <VBox fx:id="scrollBox" prefHeight="440.0" prefWidth="630.0" />
+               </children></AnchorPane>
         </content>
       </ScrollPane>
    </children>

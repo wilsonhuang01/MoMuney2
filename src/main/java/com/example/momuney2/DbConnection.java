@@ -58,18 +58,16 @@ public class DbConnection {
 
             // if the data file exists, retrieve it, otherwise create a new one
             if (dataFile.exists()) {
-                System.out.println("Data file exists, retrieving user info");
                 user = mapper.readValue(dataFile, User.class);
-                System.out.println("User = " + user);
             } else {
-                System.out.println("Data file does not exist, creating new user");
+                System.out.print("Creating new user ... ");
                 dataFile.createNewFile();
                 user = User.createDefaultUser();
                 mapper.writeValue(dataFile, user);
                 System.out.println("Created new user");
             }
 
-            System.out.println("DBConnection returning " + user);
+            //System.out.println("DBConnection returning " + user);
             return user;
         } catch (Exception ex) {
             System.out.println("getUser exception");
