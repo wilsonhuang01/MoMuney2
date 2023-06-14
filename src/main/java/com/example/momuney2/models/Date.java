@@ -1,5 +1,7 @@
 package com.example.momuney2.models;
 
+import java.time.LocalDate;
+
 public class Date {
 	
 	/** The String representation of month. */
@@ -126,5 +128,13 @@ public class Date {
 		if (month != other.month)
 			return month - other.month;
 		return day - other.day;
+	}
+
+	public int compareTo(LocalDate other) {
+		if (year != other.getYear())
+			return year - other.getYear();
+		if (month != other.getMonthValue())
+			return month - other.getMonthValue();
+		return day - other.getDayOfMonth();
 	}
 }

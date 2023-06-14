@@ -17,7 +17,7 @@
                         <Font name="Damascus Regular" size="13.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="searchName" onAction="#filterByName" prefHeight="30.0" prefWidth="180.0" promptText="Name">
+                  <TextField fx:id="searchName" onAction="#filter" prefHeight="30.0" prefWidth="180.0" promptText="Name">
                      <HBox.margin>
                         <Insets right="60.0" />
                      </HBox.margin>
@@ -30,7 +30,7 @@
                         <Font name="Damascus Regular" size="13.0" />
                      </font>
                   </Label>
-                  <DatePicker fx:id="searchDateFrom" prefHeight="30.0" prefWidth="130.0" promptText="Date">
+                  <DatePicker fx:id="searchDateFrom" onAction="#filter" prefHeight="30.0" prefWidth="130.0" promptText="Date">
                      <HBox.margin>
                         <Insets right="20.0" />
                      </HBox.margin></DatePicker>
@@ -39,7 +39,7 @@
                         <Font name="Damascus Regular" size="13.0" />
                      </font>
                   </Label>
-                  <DatePicker fx:id="searchDateTo" layoutX="330.0" layoutY="10.0" prefHeight="30.0" prefWidth="130.0" promptText="Date" />
+                  <DatePicker fx:id="searchDateTo" onAction="#filter" prefHeight="30.0" prefWidth="130.0" promptText="Date" />
                </children>
                <VBox.margin>
                   <Insets bottom="5.0" />
@@ -52,7 +52,7 @@
                         <Font name="Damascus Regular" size="13.0" />
                      </font>
                   </Label>
-                  <ChoiceBox fx:id="searchCategory" prefHeight="30.0" prefWidth="180.0">
+                  <ChoiceBox fx:id="searchCategory" onAction="#filter" prefHeight="30.0" prefWidth="180.0">
                      <HBox.margin>
                         <Insets right="60.0" />
                      </HBox.margin>

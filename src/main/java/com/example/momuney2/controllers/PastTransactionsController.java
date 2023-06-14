@@ -16,7 +16,7 @@ public class PastTransactionsController {
 
     private User user = DbConnection.getInstance().getUser();
     private List<Transaction> transactions = user.getTransactions();
-    private FilterService filterService = new FilterService();
+    private FilterService filterService = new FilterService(transactions);
 
     @FXML TextField         searchName;
     @FXML DatePicker        searchDateFrom;
@@ -36,12 +36,12 @@ public class PastTransactionsController {
         searchCategory.getItems().addAll(user.getCategories().keySet());
         searchCategory.setValue("All");
 
-        sortBy.getItems().addAll("Amount ↑", "Amount ↓", "Date ↑", "Date ↓");
-        sortBy.setValue("Date ↑");
+        sortBy.getItems().addAll("Default", "Amount\t↑", "Amount\t↓", "Date\t\t↑", "Date\t\t↓");
+        sortBy.setValue("Default");
 
         resultCount.setText(transactions.size() + " results");
 
-        addTransactionBoxes();
+        refreshTransactions();
     }
 
     private void addTransactionBoxes() {
@@ -99,19 +99,19 @@ public class PastTransactionsController {
     }
 
     @FXML
-    private void filterByName() {
-        String keywords = searchName.getText();
+    private void filter() {
+        transactions = user.getTransactions();
+        filterService.reset(transactions);
 
-        if (keywords.equals("")) {
-            transactions = user.getTransactions();
-        } else {
-            transactions = filterService.filterByName(user.getTransactions(), keywords.split(" "));
-        }
+        filterService.filterByName(searchName.getText().split(" "));
+        filterService.filterByDate(searchDateFrom.getValue(), searchDateTo.getValue());
+        filterService.filterByCategory(searchCategory.getValue());
 
-        refreshUI();
+        transactions = filterService.getTransactions();
+        refreshTransactions();
     }
 
-    private void refreshUI() {
+    private void refreshTransactions() {
         scrollBox.getChildren().clear();
         addTransactionBoxes();
 
