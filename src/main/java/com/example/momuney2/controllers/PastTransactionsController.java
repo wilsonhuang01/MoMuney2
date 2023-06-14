@@ -15,13 +15,16 @@ import java.util.List;
 public class PastTransactionsController {
 
     private User user = DbConnection.getInstance().getUser();
-    private List<Transaction> transactionList = user.getTransactions();
+    private List<Transaction> transactions = user.getTransactions();
+    private FilterService filterService = new FilterService();
 
     @FXML TextField         searchName;
-    @FXML DatePicker        searchDate;
+    @FXML DatePicker        searchDateFrom;
+    @FXML DatePicker        searchDateTo;
     @FXML ChoiceBox<String> searchCategory;
     @FXML ChoiceBox<String> sortBy;
     @FXML VBox              scrollBox;
+    @FXML Label             resultCount;
 
     @FXML
     private void initialize() {
@@ -36,11 +39,13 @@ public class PastTransactionsController {
         sortBy.getItems().addAll("Amount ↑", "Amount ↓", "Date ↑", "Date ↓");
         sortBy.setValue("Date ↑");
 
+        resultCount.setText(transactions.size() + " results");
+
         addTransactionBoxes();
     }
 
     private void addTransactionBoxes() {
-        for (Transaction transaction : transactionList) {
+        for (Transaction transaction : transactions) {
             scrollBox.getChildren().add(makeNewTransactionBox(transaction));
         }
     }
@@ -91,5 +96,25 @@ public class PastTransactionsController {
 
         vBox.getChildren().addAll(hBox, line);
         return vBox;
+    }
+
+    @FXML
+    private void filterByName() {
+        String keywords = searchName.getText();
+
+        if (keywords.equals("")) {
+            transactions = user.getTransactions();
+        } else {
+            transactions = filterService.filterByName(user.getTransactions(), keywords.split(" "));
+        }
+
+        refreshUI();
+    }
+
+    private void refreshUI() {
+        scrollBox.getChildren().clear();
+        addTransactionBoxes();
+
+        resultCount.setText(transactions.size() + " results");
     }
 }

@@ -8,28 +8,70 @@
 
 <AnchorPane fx:id="rootPane" prefHeight="600.0" prefWidth="700.0" stylesheets="@StylesheetPT.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.momuney2.controllers.PastTransactionsController">
    <children>
-      <VBox layoutX="25.0" layoutY="75.0" prefHeight="36.0" prefWidth="650.0">
+      <VBox layoutX="25.0" layoutY="75.0" prefHeight="72.0" prefWidth="650.0">
          <children>
             <HBox prefHeight="30.0" prefWidth="650.0">
                <children>
-                  <TextField fx:id="searchName" prefHeight="30.0" prefWidth="200.0" promptText="Name">
+                  <Label prefHeight="30.0" prefWidth="60.0" text="Name:">
+                     <font>
+                        <Font name="Damascus Regular" size="13.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="searchName" onAction="#filterByName" prefHeight="30.0" prefWidth="180.0" promptText="Name">
                      <HBox.margin>
-                        <Insets right="5.0" />
+                        <Insets right="60.0" />
                      </HBox.margin>
                      <font>
                         <Font name="Damascus Regular" size="13.0" />
                      </font>
                   </TextField>
-                  <DatePicker fx:id="searchDate" prefHeight="30.0" prefWidth="145.0" promptText="Date">
+                  <Label layoutX="10.0" layoutY="10.0" prefHeight="30.0" prefWidth="48.0" text="From: ">
+                     <font>
+                        <Font name="Damascus Regular" size="13.0" />
+                     </font>
+                  </Label>
+                  <DatePicker fx:id="searchDateFrom" prefHeight="30.0" prefWidth="130.0" promptText="Date">
                      <HBox.margin>
-                        <Insets right="5.0" />
+                        <Insets right="20.0" />
                      </HBox.margin></DatePicker>
-                  <ChoiceBox fx:id="searchCategory" prefHeight="30.0" prefWidth="145.0">
+                  <Label layoutX="290.0" layoutY="10.0" prefHeight="30.0" prefWidth="23.0" text="To: ">
+                     <font>
+                        <Font name="Damascus Regular" size="13.0" />
+                     </font>
+                  </Label>
+                  <DatePicker fx:id="searchDateTo" layoutX="330.0" layoutY="10.0" prefHeight="30.0" prefWidth="130.0" promptText="Date" />
+               </children>
+               <VBox.margin>
+                  <Insets bottom="5.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox prefHeight="30.0" prefWidth="650.0">
+               <children>
+                  <Label prefHeight="30.0" prefWidth="60.0" text="Category: ">
+                     <font>
+                        <Font name="Damascus Regular" size="13.0" />
+                     </font>
+                  </Label>
+                  <ChoiceBox fx:id="searchCategory" prefHeight="30.0" prefWidth="180.0">
                      <HBox.margin>
-                        <Insets right="5.0" />
+                        <Insets right="60.0" />
                      </HBox.margin>
                   </ChoiceBox>
-                  <ChoiceBox fx:id="sortBy" prefHeight="30.0" prefWidth="145.0" />
+                  <Label layoutX="10.0" layoutY="10.0" prefHeight="30.0" prefWidth="48.0" text="Sort by: ">
+                     <font>
+                        <Font name="Damascus Regular" size="13.0" />
+                     </font>
+                  </Label>
+                  <ChoiceBox fx:id="sortBy" prefHeight="30.0" prefWidth="130.0">
+                     <HBox.margin>
+                        <Insets right="92.0" />
+                     </HBox.margin>
+                  </ChoiceBox>
+                  <Label fx:id="resultCount" alignment="CENTER_RIGHT" layoutX="310.0" layoutY="10.0" prefHeight="30.0" prefWidth="80.0" text="# results">
+                     <font>
+                        <Font name="Damascus Regular" size="13.0" />
+                     </font>
+                  </Label>
                </children>
                <VBox.margin>
                   <Insets bottom="5.0" />
@@ -89,7 +131,7 @@
             </Button>
          </children>
       </HBox>
-      <ScrollPane layoutX="25.0" layoutY="117.0" prefHeight="460.0" prefWidth="650.0">
+      <ScrollPane layoutX="25.0" layoutY="152.0" prefHeight="430.0" prefWidth="650.0">
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="460.0" prefWidth="650.0">
                <children>
