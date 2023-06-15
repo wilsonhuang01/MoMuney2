@@ -10,6 +10,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.shape.Line;
 
+import java.util.Collections;
 import java.util.List;
 
 public class PastTransactionsController {
@@ -36,8 +37,8 @@ public class PastTransactionsController {
         searchCategory.getItems().addAll(user.getCategories().keySet());
         searchCategory.setValue("All");
 
-        sortBy.getItems().addAll("Default", "Amount\t↑", "Amount\t↓", "Date\t\t↑", "Date\t\t↓");
-        sortBy.setValue("Default");
+        sortBy.getItems().addAll("Amount\t↑", "Amount\t↓", "Date\t\t↑", "Date\t\t↓");
+        sortBy.setValue("Date\t\t↑");
 
         resultCount.setText(transactions.size() + " results");
 
@@ -108,6 +109,31 @@ public class PastTransactionsController {
         filterService.filterByCategory(searchCategory.getValue());
 
         transactions = filterService.getTransactions();
+        refreshTransactions();
+    }
+
+    @FXML
+    private void sort() {
+        String sortingMethod = sortBy.getValue();
+        if (sortingMethod == null) return;
+
+        switch (sortingMethod) {
+            case "Amount\t↑":
+                Collections.sort(transactions, (a, b) -> (int) Math.floor(a.getAmount() - b.getAmount()));
+                break;
+            case "Amount\t↓":
+                Collections.sort(transactions, (a, b) -> (int) Math.floor(b.getAmount() - a.getAmount()));
+                break;
+            case "Date\t\t↑":
+                Collections.sort(transactions, (a, b) -> a.getDate().compareTo(b.getDate()));
+                break;
+            case "Date\t\t↓":
+                Collections.sort(transactions, (a, b) -> b.getDate().compareTo(a.getDate()));
+                break;
+            default:
+                break;
+        }
+
         refreshTransactions();
     }
 
