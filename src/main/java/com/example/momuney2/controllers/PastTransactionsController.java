@@ -1,15 +1,20 @@
 package com.example.momuney2.controllers;
 
 import com.example.momuney2.DbConnection;
+import com.example.momuney2.Main;
 import com.example.momuney2.models.Transaction;
 import com.example.momuney2.models.User;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.shape.Line;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.util.List;
 
 public class PastTransactionsController {
@@ -17,6 +22,9 @@ public class PastTransactionsController {
     private final User user = DbConnection.getInstance().getUser();
     private List<Transaction> transactions = user.getTransactions();
     private final FilterService filterService = new FilterService(transactions);
+
+    @FXML Button            newTransactionButton;
+    @FXML Button            summaryButton;
 
     @FXML TextField         searchName;
     @FXML DatePicker        searchDateFrom;
@@ -133,5 +141,19 @@ public class PastTransactionsController {
         addTransactionBoxes();
 
         resultCount.setText(transactions.size() + " results");
+    }
+
+    @FXML
+    private void switchToNewTransactionPage() {
+        String transactionsPage = "NewTransactions.fxml";
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource(transactionsPage));
+        try {
+            Scene scene = new Scene(fxmlLoader.load());
+            Stage stage = (Stage) newTransactionButton.getScene().getWindow();
+            stage.setScene(scene);
+        } catch (IOException e) {
+            System.out.println("Unable to find " + transactionsPage);
+            throw new RuntimeException(e);
+        }
     }
 }

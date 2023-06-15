@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="rootPane" prefHeight="600.0" prefWidth="700.0" stylesheets="@StylesheetNT.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.momuney2.controllers.NewTransactionController">
+   <children>
+      <HBox fx:id="navBar" prefHeight="50.0" prefWidth="700.0">
+         <children>
+            <Label prefHeight="44.0" prefWidth="200.0" text="MoMuney" textFill="WHITE">
+               <padding>
+                  <Insets left="20.0" />
+               </padding>
+               <HBox.margin>
+                  <Insets right="235.0" />
+               </HBox.margin>
+               <font>
+                  <Font name="Caveat" size="28.0" />
+               </font>
+            </Label>
+            <Button fx:id="newTransactionButton" mnemonicParsing="false" prefHeight="40.0" prefWidth="55.0" text="New" textFill="WHITE">
+               <font>
+                  <Font name="Damascus Regular" size="15.0" />
+               </font>
+               <HBox.margin>
+                  <Insets bottom="7.0" right="5.0" top="7.0" />
+               </HBox.margin>
+               <padding>
+                  <Insets top="3.0" />
+               </padding>
+            </Button>
+            <Button fx:id="transactionsButton" mnemonicParsing="false" onAction="#switchToTransactionsPage" prefHeight="50.0" prefWidth="110.0" text="Transactions" textFill="WHITE">
+               <font>
+                  <Font name="Damascus Regular" size="15.0" />
+               </font>
+               <HBox.margin>
+                  <Insets bottom="7.0" right="5.0" top="7.0" />
+               </HBox.margin>
+               <padding>
+                  <Insets top="3.0" />
+               </padding>
+            </Button>
+            <Button fx:id="summaryButton" mnemonicParsing="false" prefHeight="50.0" prefWidth="85.0" text="Summary" textFill="WHITE">
+               <font>
+                  <Font name="Damascus Regular" size="15.0" />
+               </font>
+               <HBox.margin>
+                  <Insets bottom="7.0" top="7.0" />
+               </HBox.margin>
+               <padding>
+                  <Insets top="3.0" />
+               </padding>
+            </Button>
+         </children>
+      </HBox>
+      <VBox layoutX="25.0" layoutY="75.0" prefHeight="500.0" prefWidth="650.0">
+         <children>
+            <Label text="Vendor">
+               <font>
+                  <Font name="Damascus Regular" size="15.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="5.0" />
+               </VBox.margin>
+            </Label>
+            <TextField fx:id="vendorName" maxWidth="-Infinity" prefHeight="30.0" prefWidth="300.0" promptText="Name">
+               <VBox.margin>
+                  <Insets bottom="5.0" />
+               </VBox.margin>
+            </TextField>
+            <TextField fx:id="vendorLocation" maxWidth="-Infinity" prefHeight="30.0" prefWidth="300.0" promptText="Location">
+               <VBox.margin>
+                  <Insets bottom="30.0" />
+               </VBox.margin>
+            </TextField>
+            <Label text="Date">
+               <font>
+                  <Font name="Damascus Regular" size="15.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="5.0" />
+               </VBox.margin>
+            </Label>
+            <DatePicker fx:id="date" prefHeight="30.0" prefWidth="300.0" promptText="Date">
+               <VBox.margin>
+                  <Insets bottom="30.0" />
+               </VBox.margin>
+            </DatePicker>
+            <Label text="Amount">
+               <font>
+                  <Font name="Damascus Regular" size="15.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="5.0" />
+               </VBox.margin>
+            </Label>
+            <TextField fx:id="amount" maxWidth="-Infinity" prefHeight="30.0" prefWidth="300.0" promptText="In $">
+               <VBox.margin>
+                  <Insets bottom="30.0" />
+               </VBox.margin>
+            </TextField>
+            <Label layoutX="60.0" layoutY="216.0" text="Category">
+               <font>
+                  <Font name="Damascus Regular" size="15.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="5.0" />
+               </VBox.margin>
+            </Label>
+            <ChoiceBox fx:id="category" prefHeight="30.0" prefWidth="300.0">
+               <VBox.margin>
+                  <Insets bottom="5.0" />
+               </VBox.margin>
+            </ChoiceBox>
+            <Button fx:id="newCategoryButton" mnemonicParsing="false" onAction="#openNewCategoryPane" text="Create a new category" textFill="BLUE" underline="true">
+               <VBox.margin>
+                  <Insets bottom="30.0" left="160.0" />
+               </VBox.margin></Button>
+            <Button fx:id="confirmButton" mnemonicParsing="false" prefHeight="30.0" prefWidth="300.0" text="Confirm" textFill="WHITE">
+               <font>
+                  <Font name="Damascus Regular" size="15.0" />
+               </font>
+               <padding>
+                  <Insets top="2.0" />
+               </padding>
+            </Button>
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="50.0" right="10.0" top="10.0" />
+         </padding></VBox>
+      <AnchorPane fx:id="newCategoryPane" layoutX="200.0" layoutY="250.0" prefHeight="135.0" prefWidth="300.0" visible="false">
+         <effect>
+            <DropShadow height="80.0" radius="39.5" width="80.0">
+               <color>
+                  <Color opacity="0.6000000238418579" />
+               </color>
+            </DropShadow>
+         </effect>
+         <children>
+            <TextField fx:id="newCategoryName" layoutX="25.0" layoutY="25.0" prefHeight="30.0" prefWidth="250.0" promptText="Category name" />
+            <Button fx:id="newCategoryConfirmButton" layoutX="165.0" layoutY="80.0" mnemonicParsing="false" onAction="#createNewCategory" prefHeight="30.0" prefWidth="110.0" text="Confirm" textFill="WHITE">
+               <font>
+                  <Font name="Damascus Regular" size="15.0" />
+               </font>
+               <padding>
+                  <Insets top="2.0" />
+               </padding>
+            </Button>
+            <Button fx:id="newCategoryCancelButton" layoutX="25.0" layoutY="80.0" mnemonicParsing="false" onAction="#closeNewCategoryPane" prefHeight="30.0" prefWidth="110.0" text="Cancel">
+               <font>
+                  <Font name="Damascus Regular" size="15.0" />
+               </font>
+               <padding>
+                  <Insets top="2.0" />
+               </padding>
+            </Button>
+         </children></AnchorPane>
+   </children>
+</AnchorPane>

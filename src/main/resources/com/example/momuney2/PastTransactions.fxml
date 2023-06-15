@@ -96,7 +96,7 @@
                   <Font name="Caveat" size="28.0" />
                </font>
             </Label>
-            <Button fx:id="newTransactionButton" alignment="CENTER" mnemonicParsing="false" prefHeight="40.0" prefWidth="55.0" text="New" textAlignment="CENTER" textFill="WHITE">
+            <Button fx:id="newTransactionButton" mnemonicParsing="false" onAction="#switchToNewTransactionPage" prefHeight="40.0" prefWidth="55.0" text="New" textFill="WHITE">
                <font>
                   <Font name="Damascus Regular" size="15.0" />
                </font>
@@ -118,7 +118,7 @@
                   <Insets top="3.0" />
                </padding>
             </Button>
-            <Button fx:id="summaryButton" mnemonicParsing="false" prefHeight="50.0" prefWidth="85.0" text="Summary" textAlignment="CENTER" textFill="WHITE">
+            <Button fx:id="summaryButton" mnemonicParsing="false" prefHeight="50.0" prefWidth="85.0" text="Summary" textFill="WHITE">
                <font>
                   <Font name="Damascus Regular" size="15.0" />
                </font>

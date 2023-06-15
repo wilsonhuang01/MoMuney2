@@ -1,0 +1,186 @@
+
+* {
+    primary-color: #063143;
+    secondary-color: #0c6183;
+    gray-color: #d3d3d3;
+    lightgray-color: #e5e5e5;
+    darkgray-color: #afafaf
+}
+
+.button {
+    -fx-background-color: transparent;
+}
+
+.text-field {
+    -fx-background-color: gray-color;
+    -fx-background-radius: 5;
+    -fx-border-color: transparent;
+    -fx-border-radius: 5;
+    -fx-accent: secondary-color;
+}
+
+.text-field:hover {
+    -fx-background-color: whitesmoke;
+}
+
+.date-picker {
+    -fx-background-color: gray-color;
+    -fx-background-radius: 5;
+    -fx-border-color: transparent;
+    -fx-border-radius: 5;
+}
+
+.date-picker:hover {
+    -fx-background-color: whitesmoke;
+}
+
+.date-picker .text-field {
+    -fx-background-color: transparent;
+}
+
+.date-picker .arrow-button {
+    -fx-background-color: transparent;
+}
+
+.date-picker-popup {
+    -fx-background-color: lightgray-color;
+    -fx-background-radius: 5;
+    -fx-border-color: transparent;
+    -fx-border-radius: 5;
+}
+
+.date-picker-popup .cell:hover {
+    -fx-background-color: secondary-color;
+}
+
+.date-picker-popup .selected {
+    -fx-background-color: secondary-color;
+}
+
+.date-picker-popup .month-year-pane {
+    -fx-background-color: lightgray-color;
+}
+
+.choice-box {
+    -fx-background-color: gray-color;
+    -fx-background-radius: 5;
+    -fx-border-color: transparent;
+    -fx-border-radius: 5;
+}
+
+.choice-box:hover {
+    -fx-background-color: whitesmoke;
+}
+
+.choice-box .context-menu {
+    -fx-background-color: lightgray-color;
+    -fx-background-radius: 5;
+    -fx-border-color: transparent;
+    -fx-border-radius: 5;
+}
+
+.choice-box .menu-item:focused {
+    -fx-background-color: secondary-color;
+    -fx-background-radius: 5;
+}
+
+.scroll-pane {
+    -fx-background-color: gray-color;
+    -fx-background-radius: 5;
+    -fx-border-color: transparent;
+    -fx-border-radius: 5;
+}
+
+.scroll-pane .viewport {
+    -fx-background-color: lightgray-color;
+    -fx-background-radius: 5;
+}
+
+.scroll-pane .scroll-bar {
+    -fx-background-color: transparent;
+}
+
+.scroll-pane .scroll-bar .thumb {
+    -fx-background-color: lightgray-color;
+    -fx-background-radius: 5;
+}
+
+.scroll-pane .scroll-bar .thumb:hover {
+    -fx-background-color: whitesmoke;
+}
+
+.scroll-pane .increment-button,
+.scroll-pane .decrement-button {
+    -fx-background-color: transparent;
+    -fx-background-radius: 2;
+}
+
+.scroll-pane .increment-button:hover,
+.scroll-pane .decrement-button:hover {
+    -fx-background-color: whitesmoke;
+}
+
+.scroll-pane .corner {
+    -fx-background-color: transparent;
+}
+
+#rootPane {
+    -fx-background-color: lightgray-color;
+}
+
+#newCategoryPane {
+    -fx-background-color: lightgray-color;
+    -fx-background-radius: 20;
+}
+
+#navBar {
+    -fx-background-color: primary-color;
+}
+
+#newTransactionButton {
+    -fx-background-color: secondary-color;
+    -fx-background-radius: 10;
+}
+
+#transactionsButton, #summaryButton {
+    -fx-background-radius: 10;
+}
+
+#transactionsButton:hover, #summaryButton:hover {
+    -fx-background-color: #0d618299;
+}
+
+#newCategoryButton {
+    -fx-background-radius: 10;
+}
+
+#newCategoryButton:hover {
+    -fx-background-color: whitesmoke;
+}
+
+#newCategoryConfirmButton {
+    -fx-background-color: secondary-color;
+    -fx-background-radius: 10;
+}
+
+#newCategoryConfirmButton:hover {
+    -fx-background-color: #0d618299;
+}
+
+#newCategoryCancelButton {
+    -fx-background-color: gray-color;
+    -fx-background-radius: 10;
+}
+
+#newCategoryCancelButton:hover {
+    -fx-background-color: whitesmoke;
+}
+
+#confirmButton {
+    -fx-background-color: secondary-color;
+    -fx-background-radius: 10;
+}
+
+#confirmButton:hover {
+    -fx-background-color: #0d618299;
+}
