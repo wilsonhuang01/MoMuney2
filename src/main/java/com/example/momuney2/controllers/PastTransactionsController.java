@@ -10,14 +10,13 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.shape.Line;
 
-import java.util.Collections;
 import java.util.List;
 
 public class PastTransactionsController {
 
-    private User user = DbConnection.getInstance().getUser();
+    private final User user = DbConnection.getInstance().getUser();
     private List<Transaction> transactions = user.getTransactions();
-    private FilterService filterService = new FilterService(transactions);
+    private final FilterService filterService = new FilterService(transactions);
 
     @FXML TextField         searchName;
     @FXML DatePicker        searchDateFrom;
@@ -118,20 +117,12 @@ public class PastTransactionsController {
         if (sortingMethod == null) return;
 
         switch (sortingMethod) {
-            case "Amount\t↑":
-                Collections.sort(transactions, (a, b) -> (int) Math.floor(a.getAmount() - b.getAmount()));
-                break;
-            case "Amount\t↓":
-                Collections.sort(transactions, (a, b) -> (int) Math.floor(b.getAmount() - a.getAmount()));
-                break;
-            case "Date\t\t↑":
-                Collections.sort(transactions, (a, b) -> a.getDate().compareTo(b.getDate()));
-                break;
-            case "Date\t\t↓":
-                Collections.sort(transactions, (a, b) -> b.getDate().compareTo(a.getDate()));
-                break;
-            default:
-                break;
+            case "Amount\t↑" -> transactions.sort((a, b) -> (int) Math.floor(a.getAmount() - b.getAmount()));
+            case "Amount\t↓" -> transactions.sort((a, b) -> (int) Math.floor(b.getAmount() - a.getAmount()));
+            case "Date\t\t↑" -> transactions.sort((a, b) -> a.getDate().compareTo(b.getDate()));
+            case "Date\t\t↓" -> transactions.sort((a, b) -> b.getDate().compareTo(a.getDate()));
+            default -> {
+            }
         }
 
         refreshTransactions();

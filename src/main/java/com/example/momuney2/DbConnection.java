@@ -4,7 +4,6 @@ import java.io.File;
 import java.io.IOException;
 
 import com.fasterxml.jackson.databind.DeserializationFeature;
-import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 
@@ -13,11 +12,11 @@ import com.example.momuney2.models.User;
 public class DbConnection {
 
     // The directory to store user data.
-    private String directory;
+    private final String directory;
     // The ObjectMapper that maps data to the database or to a User object.
-    private ObjectMapper mapper;
+    private final ObjectMapper mapper;
     // The single instance of DbConnection.
-    private static DbConnection instance = new DbConnection();
+    private static final DbConnection instance = new DbConnection();
 
     /**
      * Construct a new DbConnection.
@@ -29,7 +28,11 @@ public class DbConnection {
         File dirFile = new File(dataDir);
 
         // make directory if it does not exist
-        if (!dirFile.exists()) dirFile.mkdir();
+        if (!dirFile.exists()) {
+            if (!dirFile.mkdir()) {
+                System.out.println("Failed to create directory");
+            }
+        }
 
         // enable features and configure the ObjectMapper
         mapper = new ObjectMapper()
@@ -61,7 +64,9 @@ public class DbConnection {
                 user = mapper.readValue(dataFile, User.class);
             } else {
                 System.out.print("Creating new user ... ");
-                dataFile.createNewFile();
+                if (!dataFile.createNewFile()) {
+                    System.out.println("Failed to create data file");
+                }
                 user = User.createDefaultUser();
                 mapper.writeValue(dataFile, user);
                 System.out.println("Created new user");
@@ -95,8 +100,6 @@ public class DbConnection {
 
             return true;
 
-        } catch (JsonMappingException ex) {
-            ex.printStackTrace();
         } catch (IOException ex) {
             ex.printStackTrace();
         }

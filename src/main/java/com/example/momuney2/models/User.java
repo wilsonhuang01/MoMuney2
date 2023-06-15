@@ -88,7 +88,7 @@ public class User {
 
 	/**
 	 * get the list of Categories.
-	 * @return the list of Categories
+	 * @return Categories
 	 */
 	public Map<String, Category> getCategories() {
 		return categories;
@@ -99,10 +99,6 @@ public class User {
 	 * @return the String representation of the User
 	 */
 	public String toString() {
-		StringBuilder sb = new StringBuilder();
-		sb.append(transactions);
-		sb.append(categories);
-
-		return sb.toString();
+		return String.valueOf(transactions) + categories;
 	}
 }
