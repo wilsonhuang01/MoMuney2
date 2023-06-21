@@ -3,11 +3,58 @@
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
 <AnchorPane fx:id="rootPane" prefHeight="600.0" prefWidth="700.0" stylesheets="@StylesheetPT.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.momuney2.controllers.PastTransactionsController">
    <children>
+      <HBox fx:id="navBar" prefHeight="50.0" prefWidth="700.0">
+         <children>
+            <Label prefHeight="44.0" prefWidth="200.0" text="MoMuney" textFill="WHITE">
+               <padding>
+                  <Insets left="20.0" />
+               </padding>
+               <HBox.margin>
+                  <Insets right="235.0" />
+               </HBox.margin>
+               <font>
+                  <Font name="Caveat" size="28.0" />
+               </font>
+            </Label>
+            <Button fx:id="newTransactionButton" mnemonicParsing="false" onAction="#changeToNewTransactionPage" prefHeight="40.0" prefWidth="55.0" text="New" textFill="WHITE">
+               <font>
+                  <Font name="Damascus Regular" size="15.0" />
+               </font>
+               <HBox.margin>
+                  <Insets bottom="7.0" right="5.0" top="7.0" />
+               </HBox.margin>
+               <padding>
+                  <Insets top="3.0" />
+               </padding>
+            </Button>
+            <Button fx:id="transactionsButton" mnemonicParsing="false" prefHeight="50.0" prefWidth="110.0" text="Transactions" textFill="WHITE">
+               <font>
+                  <Font name="Damascus Regular" size="15.0" />
+               </font>
+               <HBox.margin>
+                  <Insets bottom="7.0" right="5.0" top="7.0" />
+               </HBox.margin>
+               <padding>
+                  <Insets top="3.0" />
+               </padding>
+            </Button>
+            <Button fx:id="summaryButton" mnemonicParsing="false" onAction="#changeToSummaryPage" prefHeight="50.0" prefWidth="85.0" text="Summary" textFill="WHITE">
+               <font>
+                  <Font name="Damascus Regular" size="15.0" />
+               </font>
+               <HBox.margin>
+                  <Insets bottom="7.0" top="7.0" />
+               </HBox.margin>
+               <padding>
+                  <Insets top="3.0" />
+               </padding>
+            </Button>
+         </children>
+      </HBox>
       <VBox layoutX="25.0" layoutY="75.0" prefHeight="72.0" prefWidth="650.0">
          <children>
             <HBox prefHeight="30.0" prefWidth="650.0">
@@ -77,60 +124,8 @@
                   <Insets bottom="5.0" />
                </VBox.margin>
             </HBox>
-            <Line endX="648.0" stroke="#e0e0e0" strokeWidth="2.0">
-               <VBox.margin>
-                  <Insets />
-               </VBox.margin></Line>
          </children>
       </VBox>
-      <HBox fx:id="navBar" prefHeight="50.0" prefWidth="700.0">
-         <children>
-            <Label prefHeight="44.0" prefWidth="200.0" text="MoMuney" textFill="WHITE">
-               <padding>
-                  <Insets left="20.0" />
-               </padding>
-               <HBox.margin>
-                  <Insets right="235.0" />
-               </HBox.margin>
-               <font>
-                  <Font name="Caveat" size="28.0" />
-               </font>
-            </Label>
-            <Button fx:id="newTransactionButton" mnemonicParsing="false" onAction="#changeToNewTransactionPage" prefHeight="40.0" prefWidth="55.0" text="New" textFill="WHITE">
-               <font>
-                  <Font name="Damascus Regular" size="15.0" />
-               </font>
-               <HBox.margin>
-                  <Insets bottom="7.0" right="5.0" top="7.0" />
-               </HBox.margin>
-               <padding>
-                  <Insets top="3.0" />
-               </padding>
-            </Button>
-            <Button fx:id="transactionsButton" mnemonicParsing="false" prefHeight="50.0" prefWidth="110.0" text="Transactions" textFill="WHITE">
-               <font>
-                  <Font name="Damascus Regular" size="15.0" />
-               </font>
-               <HBox.margin>
-                  <Insets bottom="7.0" right="5.0" top="7.0" />
-               </HBox.margin>
-               <padding>
-                  <Insets top="3.0" />
-               </padding>
-            </Button>
-            <Button fx:id="summaryButton" mnemonicParsing="false" onAction="#changeToSummaryPage" prefHeight="50.0" prefWidth="85.0" text="Summary" textFill="WHITE">
-               <font>
-                  <Font name="Damascus Regular" size="15.0" />
-               </font>
-               <HBox.margin>
-                  <Insets bottom="7.0" top="7.0" />
-               </HBox.margin>
-               <padding>
-                  <Insets top="3.0" />
-               </padding>
-            </Button>
-         </children>
-      </HBox>
       <ScrollPane layoutX="25.0" layoutY="152.0" prefHeight="430.0" prefWidth="650.0" vbarPolicy="ALWAYS">
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefWidth="630.0">
