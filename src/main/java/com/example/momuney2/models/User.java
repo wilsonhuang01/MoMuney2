@@ -49,6 +49,8 @@ public class User {
 	 */
 	public void addTransaction(Transaction transaction) {
 		transactions.add(transaction);
+
+		addToCategory(transaction.getCategory(), transaction.getAmount());
 	}
 
 	/**

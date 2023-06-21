@@ -33,7 +33,7 @@
                   <Insets top="3.0" />
                </padding>
             </Button>
-            <Button fx:id="transactionsButton" mnemonicParsing="false" onAction="#switchToTransactionsPage" prefHeight="50.0" prefWidth="110.0" text="Transactions" textFill="WHITE">
+            <Button fx:id="transactionsButton" mnemonicParsing="false" onAction="#changeToTransactionsPage" prefHeight="50.0" prefWidth="110.0" text="Transactions" textFill="WHITE">
                <font>
                   <Font name="Damascus Regular" size="15.0" />
                </font>
@@ -120,7 +120,7 @@
                <VBox.margin>
                   <Insets bottom="30.0" left="160.0" />
                </VBox.margin></Button>
-            <Button fx:id="confirmButton" mnemonicParsing="false" prefHeight="30.0" prefWidth="300.0" text="Confirm" textFill="WHITE">
+            <Button fx:id="confirmButton" mnemonicParsing="false" onAction="#createNewTransaction" prefHeight="30.0" prefWidth="300.0" text="Confirm" textFill="WHITE">
                <font>
                   <Font name="Damascus Regular" size="15.0" />
                </font>

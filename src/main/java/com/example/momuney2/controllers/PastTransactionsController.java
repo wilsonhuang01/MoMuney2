@@ -144,7 +144,7 @@ public class PastTransactionsController {
     }
 
     @FXML
-    private void switchToNewTransactionPage() {
+    private void changeToNewTransactionPage() {
         String transactionsPage = "NewTransactions.fxml";
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource(transactionsPage));
         try {

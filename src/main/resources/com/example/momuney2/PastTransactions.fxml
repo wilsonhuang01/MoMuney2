@@ -96,7 +96,7 @@
                   <Font name="Caveat" size="28.0" />
                </font>
             </Label>
-            <Button fx:id="newTransactionButton" mnemonicParsing="false" onAction="#switchToNewTransactionPage" prefHeight="40.0" prefWidth="55.0" text="New" textFill="WHITE">
+            <Button fx:id="newTransactionButton" mnemonicParsing="false" onAction="#changeToNewTransactionPage" prefHeight="40.0" prefWidth="55.0" text="New" textFill="WHITE">
                <font>
                   <Font name="Damascus Regular" size="15.0" />
                </font>
