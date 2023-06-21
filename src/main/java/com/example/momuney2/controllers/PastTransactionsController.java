@@ -145,7 +145,21 @@ public class PastTransactionsController {
 
     @FXML
     private void changeToNewTransactionPage() {
-        String transactionsPage = "NewTransactions.fxml";
+        String transactionsPage = "NewTransaction.fxml";
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource(transactionsPage));
+        try {
+            Scene scene = new Scene(fxmlLoader.load());
+            Stage stage = (Stage) newTransactionButton.getScene().getWindow();
+            stage.setScene(scene);
+        } catch (IOException e) {
+            System.out.println("Unable to find " + transactionsPage);
+            throw new RuntimeException(e);
+        }
+    }
+
+    @FXML
+    private void changeToSummaryPage() {
+        String transactionsPage = "SummaryV2.fxml";
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource(transactionsPage));
         try {
             Scene scene = new Scene(fxmlLoader.load());

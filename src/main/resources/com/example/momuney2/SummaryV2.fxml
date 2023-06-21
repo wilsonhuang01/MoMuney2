@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="rootPane" prefHeight="600.0" prefWidth="700.0" stylesheets="@StylesheetS.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.momuney2.controllers.SummaryControllerV2">
+   <children>
+      <HBox fx:id="navBar" prefHeight="50.0" prefWidth="700.0">
+         <children>
+            <Label prefHeight="44.0" prefWidth="200.0" text="MoMuney" textFill="WHITE">
+               <padding>
+                  <Insets left="20.0" />
+               </padding>
+               <HBox.margin>
+                  <Insets right="235.0" />
+               </HBox.margin>
+               <font>
+                  <Font name="Caveat" size="28.0" />
+               </font>
+            </Label>
+            <Button fx:id="newTransactionButton" mnemonicParsing="false" onAction="#changeToNewTransactionPage" prefHeight="40.0" prefWidth="55.0" text="New" textFill="WHITE">
+               <font>
+                  <Font name="Damascus Regular" size="15.0" />
+               </font>
+               <HBox.margin>
+                  <Insets bottom="7.0" right="5.0" top="7.0" />
+               </HBox.margin>
+               <padding>
+                  <Insets top="3.0" />
+               </padding>
+            </Button>
+            <Button fx:id="transactionsButton" mnemonicParsing="false" onAction="#changeToTransactionsPage" prefHeight="50.0" prefWidth="110.0" text="Transactions" textFill="WHITE">
+               <font>
+                  <Font name="Damascus Regular" size="15.0" />
+               </font>
+               <HBox.margin>
+                  <Insets bottom="7.0" right="5.0" top="7.0" />
+               </HBox.margin>
+               <padding>
+                  <Insets top="3.0" />
+               </padding>
+            </Button>
+            <Button fx:id="summaryButton" mnemonicParsing="false" prefHeight="50.0" prefWidth="85.0" text="Summary" textFill="WHITE">
+               <font>
+                  <Font name="Damascus Regular" size="15.0" />
+               </font>
+               <HBox.margin>
+                  <Insets bottom="7.0" top="7.0" />
+               </HBox.margin>
+               <padding>
+                  <Insets top="3.0" />
+               </padding>
+            </Button>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

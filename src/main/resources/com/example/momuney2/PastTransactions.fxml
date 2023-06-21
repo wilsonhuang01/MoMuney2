@@ -118,7 +118,7 @@
                   <Insets top="3.0" />
                </padding>
             </Button>
-            <Button fx:id="summaryButton" mnemonicParsing="false" prefHeight="50.0" prefWidth="85.0" text="Summary" textFill="WHITE">
+            <Button fx:id="summaryButton" mnemonicParsing="false" onAction="#changeToSummaryPage" prefHeight="50.0" prefWidth="85.0" text="Summary" textFill="WHITE">
                <font>
                   <Font name="Damascus Regular" size="15.0" />
                </font>
@@ -131,9 +131,9 @@
             </Button>
          </children>
       </HBox>
-      <ScrollPane layoutX="25.0" layoutY="152.0" prefHeight="430.0" prefWidth="650.0">
+      <ScrollPane layoutX="25.0" layoutY="152.0" prefHeight="430.0" prefWidth="650.0" vbarPolicy="ALWAYS">
         <content>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="460.0" prefWidth="650.0">
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefWidth="630.0">
                <children>
                   <VBox fx:id="scrollBox" prefHeight="440.0" prefWidth="630.0" />
                </children></AnchorPane>
