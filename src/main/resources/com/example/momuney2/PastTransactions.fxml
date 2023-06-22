@@ -126,7 +126,7 @@
             </HBox>
          </children>
       </VBox>
-      <ScrollPane layoutX="25.0" layoutY="152.0" prefHeight="430.0" prefWidth="650.0" vbarPolicy="ALWAYS">
+      <ScrollPane layoutX="25.0" layoutY="150.0" prefHeight="430.0" prefWidth="650.0" vbarPolicy="ALWAYS">
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefWidth="630.0">
                <children>

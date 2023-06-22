@@ -129,8 +129,6 @@ public class PastTransactionsController {
             case "Amount\t↓" -> transactions.sort((a, b) -> (int) Math.floor(b.getAmount() - a.getAmount()));
             case "Date\t\t↑" -> transactions.sort((a, b) -> a.getDate().compareTo(b.getDate()));
             case "Date\t\t↓" -> transactions.sort((a, b) -> b.getDate().compareTo(a.getDate()));
-            default -> {
-            }
         }
 
         refreshTransactions();
